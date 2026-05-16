@@ -1,0 +1,14 @@
+services:
+  tsdproxy:
+    image: almeidapaulopt/tsdproxy:2.1.0
+    restart: unless-stopped
+    environment:
+      - TSDPROXY_AUTHKEY
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - tsdproxy_data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  tsdproxy_data:
