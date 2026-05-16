@@ -7,8 +7,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - tsdproxy_data:/data
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    networks:
+      - dokploy-network
 
 volumes:
   tsdproxy_data:
+
+networks:
+  dokploy-network:
+    external: true
