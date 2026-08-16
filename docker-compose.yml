@@ -1,6 +1,6 @@
 services:
   tsdproxy:
-    image: almeidapaulopt/tsdproxy:2.1.0
+    image: almeidapaulopt/tsdproxy:2.3.4
     restart: unless-stopped
     environment:
       - TSDPROXY_AUTHKEY
